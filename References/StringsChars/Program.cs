@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace String_Chars
+namespace StringsChars
 {
     internal class Program
     {
