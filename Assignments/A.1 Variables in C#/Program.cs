@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace VariablesInC_
+namespace VariablesInCSHARP
 {
     internal class Program
     {
