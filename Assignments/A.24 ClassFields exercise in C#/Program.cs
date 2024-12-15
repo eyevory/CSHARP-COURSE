@@ -1,91 +1,91 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace A._24_ClassFields_exercise_in_C_
 {
-    public class Product // new class named Product
+    class Product
     {
-        // declaring private fields for name price and stock
-        private string name;
+        // Private fields to store product with name, price and quantity
+        private string Name;
+        private double Price;
+        private int Stock;
 
-        private double price;
-
-        private int stock;
-        // Constructor for name, price and stock
+        // Constructor
         public Product(string name, double price, int stock)
         {
-            this.name = name;
-            this.price = price;
-            this.stock = stock;
+            this.Name = name; // Assign the product name
+            SetPrice(price); // Validate and set the product price
+            SetStock(stock); // Validate and set the stock quantity
+
         }
 
-        // Set methods to set a new value for name, price and stock separately
-        public void SetName(string newName)
+        // Method to set the name of the product
+        public void SetName(string name)
         {
-            name = newName;
+            // Assign a valid name or default to "Invalid name" ir input is null or empty
+            this.Name = !string.IsNullOrEmpty(Name) ? Name : "Invalid Name";
         }
 
-        public void SetPrice(double newPrice)
-        {
-            price = newPrice;
-        }
-
-        public void SetStock(int newStock)
-        {
-            stock = newStock;
-        }
-
-        // Get methods to return name, price or stock in a product
+        // Method to get the name of the product
         public string GetName()
         {
-            return name;
+            // Return the name of the product
+            return Name;
         }
-
+        // Method to set the price of the product
+        public void SetPrice(double price)
+        {
+            // Assign a positive price or default to 0 if input is invalid
+            this.Price = price > 0 ? price : 0;
+        }
+        // Method to get the price of the product
         public double GetPrice()
         {
-            return price;
+            // Return the price of the product
+            return Price;
         }
-
+        // Method to set the quantity of the product in stock
+        public void SetStock(int stock)
+        {
+            // Assign a non negative value or default to 0 if invalid input
+            this.Stock = stock >= 0 ? stock : 0;
+        }
+        // Method to get the quantity of the product in stock
         public int GetStock()
         {
-            return stock;
+            // Return the stock quantity
+            return Stock;
         }
-        
-        // Method to print out details about current product
-        public string GetProductDetails()
+
+        // Method to return the details of the product
+        public string ReturnDetails()
         {
-            return $"Product Name: {name}, Price: {price}, Stock: {stock}";
+            // Return the details about the product "Name, price, stock"
+            return $"Name: {Name}\nPrice: {Price}$\nStock: {Stock}";
         }
     }
+
     internal class Program
     {
         static void Main(string[] args)
         {
-            // new product using the Product class and assigning inital values
-            Product item = new Product("Phone", 599.99, 5);
-            
-            // Print initial values set
-            Console.WriteLine("Initial product details:");
-            Console.WriteLine(item.GetProductDetails());
+            // Create an instance of the product class
+            Product product = new Product("Phone", 599.99, 5);
 
-            // Set new values individually 
-            item.SetName("Laptop");
-            item.SetPrice(999.99);
-            item.SetStock(10);
-            
-            // Print new values
-            Console.WriteLine("Updated product details\n" + item.GetProductDetails());
+            Console.WriteLine(product.ReturnDetails());
+            // Update product details
+            product.SetName("Laptop");
+            product.SetPrice(999.99);
+            product.SetStock(10);
 
-            Console.WriteLine("\nExample of Get method: " + item.GetName());
-            
+            // Display updated product details
+            Console.WriteLine(product.ReturnDetails());
+
             Console.ReadLine();
+
         }
     }
 }
