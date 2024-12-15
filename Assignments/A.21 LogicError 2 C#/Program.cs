@@ -11,7 +11,7 @@ namespace logicError2
         static void Main(string[] args)
         {
 
-            int age = 34;
+            int age = 30;
 
             // While keeping the same if statement logic, simply making the requirements needing to meet an upper and lower limit makes else statements work
             if (age > 18 && age < 30) // && (AND operator to check if it's under 30 added)
@@ -25,6 +25,10 @@ namespace logicError2
             else if (age > 50)
             {
                 Console.WriteLine("Over 50");
+            }
+            else // if under 18
+            {
+                Console.WriteLine("Under 18");
             }
             Console.ReadLine();
         }
