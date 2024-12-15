@@ -65,7 +65,7 @@ namespace A._25_Lists_And_Collections_C_
             {
                 Console.WriteLine($"Product: {name} not found");
             }
-            else 
+            else
             {
                 var oldPrice = itemDetails[name]; // Gets Values of inputted product Key and stores it in a variable
                 itemDetails[name] = (oldPrice.Price, nstock); // Sets said products stock value to the inputted stock value while keeping the price the same
@@ -103,9 +103,9 @@ namespace A._25_Lists_And_Collections_C_
             }
         }
     }
-    
-    
-    
+
+
+
     internal class Program
     {
         static void Main(string[] args)
@@ -119,14 +119,19 @@ namespace A._25_Lists_And_Collections_C_
             inventory.AddItem("Laptop", 1200.50, 7);
             inventory.AddItem("Smartphone", 799.99, 12);
             inventory.AddItem("Tablet", 399.99, 15);
+            
             // Print out current inventory
             inventory.DetailsItem();
+            
             // Update stock (name, stock)
             inventory.UpdateStock("Laptop", 5);
+            
             // Remove item from inventory (name)
             inventory.RemoveItem("Tablet");
+            
             // Find and print highest value item and its value
             inventory.MostExpensive();
+           
             // Calculate total value
             inventory.TotalValue();
 
