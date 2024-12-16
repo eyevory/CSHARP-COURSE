@@ -29,8 +29,8 @@ namespace Task_1
 
             // Print out short explanations on what the variables are
             Console.WriteLine("\nAn int or integer is a whole number");
-            Console.WriteLine("A double is a number with ~15 decimal digit accuracy (64-bit)");
-            Console.WriteLine("A float is a number with 7 decimal digit accuracy (32-bit)");
+            Console.WriteLine("A double is a number with ~15-16 decimal digit accuracy (64-bit)");
+            Console.WriteLine("A float is a number with ~7 decimal digit accuracy (32-bit)");
             Console.WriteLine("A string is just text");
 
 
